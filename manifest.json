@@ -1,0 +1,30 @@
+{
+    "name": "Youtube Timecoder",
+    "description": "Add timestamp into comment!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "icons": {
+        "16": "/images/yttc_logo_16.png",
+        "32": "/images/yttc_logo_32.png",
+        "48": "/images/yttc_logo_48.png",
+        "128": "/images/yttc_logo_128.png"
+    },
+
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["storage", "activeTab", "scripting"],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/images/yttc_logo_16.png",
+            "32": "/images/yttc_logo_32.png",
+            "48": "/images/yttc_logo_48.png",
+            "128": "/images/yttc_logo_128.png"
+          }
+    },
+
+    
+    "author": "Calcium",
+    "short_name": "YT Timecode"
+  }
