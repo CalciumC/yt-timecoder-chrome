@@ -1,0 +1,28 @@
+form {
+  overflow: hidden;
+  width:300px
+}
+
+label, span.hint {
+  float: left;
+  width: 300px;
+  padding-right: 24px;
+}
+
+label{
+  font-size: 11pt;
+}
+
+span.hint{
+  color: gray;
+}
+
+input {
+  float: left;
+  width: calc(100% - 150px);
+}
+
+button {
+  float: right;
+  width: calc(100% - 200px);
+}
