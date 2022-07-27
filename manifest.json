@@ -23,8 +23,13 @@
             "128": "/images/yttc_logo_128.png"
           }
     },
+    "content_scripts": [
+        {
+          "matches": ["https://www.youtube.com/watch?*"],
+          "js": ["content.js"]
+        }
+      ],
 
-    
     "author": "Calcium",
     "short_name": "YT Timecode"
   }
