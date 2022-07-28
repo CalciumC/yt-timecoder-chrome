@@ -1,6 +1,6 @@
 {
     "name": "Youtube Timecoder",
-    "description": "Add timestamp into comment!",
+    "description": "press a key to add timestamp into your comment!",
     "version": "1.0",
     "manifest_version": 3,
     "icons": {
