@@ -2,16 +2,21 @@ let _prefs;
 
 chrome.runtime.onInstalled.addListener(()=>{
     chrome.storage.sync.get('prefs', (data)=>{
-        if (!data || JSON.stringify(data) == '{}'){x
+        if (!data || (Object.keys(data).length === 0 && Object.getPrototypeOf(data) === Object.prototype)){
             _prefs = { 'hotkey': 'F2', 'interval': 0};
             chrome.storage.sync.set(storePrefs(_prefs));
             console.log("yttc: default used: [F2] with [0s] interval.");
         } else {
             _prefs = JSON.parse(data.prefs);
-            console.log(`yttc: default used: [${_prefs.hotkey}] with [${_prefs.interval}s] interval.`);
+            console.log(`yttc: value used: [${_prefs.hotkey}] with [${_prefs.interval}s] interval.`);
         }
     });
     
+});
+
+chrome.runtime.onStartup.addListener(()=>{
+    _prefs = JSON.parse(data.prefs);
+    console.log(`yttc: default used: [${_prefs.hotkey}] with [${_prefs.interval}s] interval.`);
 });
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {

@@ -14,11 +14,16 @@ iHotkey.addEventListener("keydown", (event)=>{
     event.preventDefault();
     _hotkey = event.code;
     iHotkey.value = _hotkey;
+    mSaved.style.display = 'none';
 });
 
-bSave.addEventListener('click', ()=>{
+iInterval.addEventListener("keydown", (event)=>{
+    mSaved.style.display = 'none';
+});
+
+bSave.addEventListener('click', (event)=>{
+    event.preventDefault();
     chrome.runtime.sendMessage({type: 'save_pref', hotkey: _hotkey, interval: _interval}, (response)=>{
-        // todo: saved message still not showing
         if(response.result){
             mSaved.style.display = 'block';
         }
